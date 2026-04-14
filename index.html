@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Undercover — Ronaldo vs Messi</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="hero">
+        <h1>Undercover</h1>
+        <p class="subtitle">Version démo — une seule paire de mots pour valider le gameplay.</p>
+      </header>
+
+      <section id="setup-screen" class="card">
+        <h2>1) Préparer la partie</h2>
+        <label for="player-count">Nombre de joueurs (3 à 12)</label>
+        <div class="row">
+          <input id="player-count" type="number" min="3" max="12" value="5" />
+          <button id="start-btn" class="btn primary">Lancer la distribution</button>
+        </div>
+        <p class="hint">Règle actuelle: 1 Undercover par partie.</p>
+      </section>
+
+      <section id="deal-screen" class="card hidden" aria-live="polite">
+        <h2>2) Distribuer les rôles</h2>
+        <p id="deal-instruction">Passe le téléphone au joueur 1, puis appuie pour révéler.</p>
+
+        <div id="reveal-zone" class="reveal-zone">
+          <p class="reveal-placeholder">Mot caché</p>
+        </div>
+
+        <div class="actions">
+          <button id="reveal-btn" class="btn primary">Révéler</button>
+          <button id="next-btn" class="btn hidden">Joueur suivant</button>
+        </div>
+
+        <p class="hint">Ne montre ton mot à personne. Quand tu as mémorisé, passe l'écran.</p>
+      </section>
+
+      <section id="play-screen" class="card hidden">
+        <h2>3) Phase de débat</h2>
+        <p>
+          Tous les joueurs donnent un indice. Ensuite, votez pour éliminer un suspect.
+          Recommencez jusqu'à identifier l'Undercover.
+        </p>
+        <ul>
+          <li>Mot des civils: <strong>Ronaldo</strong></li>
+          <li>Mot de l'Undercover: <strong>Messi</strong></li>
+        </ul>
+        <button id="restart-btn" class="btn secondary">Nouvelle partie</button>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
