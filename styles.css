@@ -65,7 +65,8 @@ label {
   font-weight: 600;
 }
 
-input[type='number'] {
+select {
+
   background: #0f1328;
   color: var(--text);
   border: 1px solid #4d5b95;
@@ -147,7 +148,8 @@ input[type='number'] {
   }
 
   .btn,
-  input[type='number'] {
+  select {
+
     width: 100%;
   }
 }

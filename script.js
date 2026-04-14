@@ -22,6 +22,17 @@ let state = {
   revealed: false
 };
 
+function fillPlayerCountChoices() {
+  for (let count = 3; count <= 12; count += 1) {
+    const option = document.createElement('option');
+    option.value = String(count);
+    option.textContent = `${count} joueurs`;
+    playerCountInput.append(option);
+  }
+
+  playerCountInput.value = '5';
+}
+
 function shuffle(array) {
   const copy = [...array];
   for (let i = copy.length - 1; i > 0; i -= 1) {
@@ -114,6 +125,7 @@ function resetAll() {
   playerCountInput.focus();
 }
 
+fillPlayerCountChoices();
 startBtn.addEventListener('click', startDealPhase);
 revealBtn.addEventListener('click', revealCurrentPlayerWord);
 nextBtn.addEventListener('click', nextPlayerOrPlayPhase);
