@@ -10,7 +10,7 @@
     <main class="app">
       <header class="hero">
         <h1>Undercover</h1>
-        <p class="subtitle">Version football — prénoms, rôles personnalisés, vote et élimination.</p>
+        <p class="subtitle">Mode football ou prénoms — rôles personnalisés, vote et élimination.</p>
       </header>
 
       <section id="setup-screen" class="card">
@@ -20,6 +20,16 @@
           <select id="player-count" aria-label="Nombre de joueurs"></select>
         </div>
 
+
+        <div class="row">
+          <div class="field">
+            <label for="word-mode">Mode de mots</label>
+            <select id="word-mode" aria-label="Mode de mots">
+              <option value="football">Football</option>
+              <option value="firstname">Prénom</option>
+            </select>
+          </div>
+        </div>
         <div class="row">
           <div class="field">
             <label for="undercover-count">Nombre d'Undercovers</label>

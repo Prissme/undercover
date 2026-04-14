@@ -5,6 +5,7 @@ const playScreen = document.getElementById('play-screen');
 const playerCountInput = document.getElementById('player-count');
 const undercoverCountInput = document.getElementById('undercover-count');
 const mrWhiteCountInput = document.getElementById('mrwhite-count');
+const wordModeInput = document.getElementById('word-mode');
 const namesContainer = document.getElementById('names-container');
 const setupHint = document.getElementById('setup-hint');
 
@@ -40,6 +41,13 @@ const FOOTBALL_WORDS = [
   'Paolo Maldini',
   'Franz Beckenbauer'
 ];
+
+const FIRSTNAME_WORDS = ['Albert', 'Driss', 'Ariyen', 'imad', 'Almir', 'Benjamin'];
+
+const WORD_SETS = {
+  football: FOOTBALL_WORDS,
+  firstname: FIRSTNAME_WORDS
+};
 
 let state = {
   players: [],
@@ -171,7 +179,9 @@ function buildPlayers(count, undercovers, mrWhites) {
 }
 
 function pickSecretWords() {
-  const mixedWords = shuffle(FOOTBALL_WORDS);
+  const mode = wordModeInput.value in WORD_SETS ? wordModeInput.value : 'football';
+  const words = WORD_SETS[mode];
+  const mixedWords = shuffle(words);
   return [mixedWords[0], mixedWords[1]];
 }
 
