@@ -43,10 +43,25 @@ const FOOTBALL_WORDS = [
 ];
 
 const FIRSTNAME_WORDS = ['Albert', 'Driss', 'Ariyen', 'imad', 'Almir', 'Benjamin'];
+const ANIME_WORDS = [
+  'Naruto',
+  'Sasuke',
+  'Sakura',
+  'Mikasa',
+  'Livai',
+  'Eren',
+  'Goku',
+  'Vegeta',
+  'Sukuna',
+  'Gojo',
+  'Itadori',
+  'Luffy'
+];
 
 const WORD_SETS = {
   football: FOOTBALL_WORDS,
-  firstname: FIRSTNAME_WORDS
+  firstname: FIRSTNAME_WORDS,
+  anime: ANIME_WORDS
 };
 
 let state = {
