@@ -1,0 +1,12 @@
+{
+  "name": "undercover-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Jeu Undercover statique prêt pour déploiement Koyeb via buildpack Node.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
