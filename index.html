@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Undercover — Football Edition</title>
     <title>Undercover — Football, Prénoms & Anime</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
@@ -11,11 +10,20 @@
     <main class="app">
       <header class="hero">
         <h1>Undercover</h1>
-        <p class="subtitle">Mode football ou prénoms — rôles personnalisés, vote et élimination.</p>
         <p class="subtitle">Mode football, prénoms ou anime — rôles personnalisés, vote et élimination.</p>
       </header>
 
       <section id="setup-screen" class="card">
+        <h2>1) Préparer la partie</h2>
+        <label for="player-count">Nombre de joueurs (3 à 20)</label>
+        <div class="row">
+          <select id="player-count" aria-label="Nombre de joueurs"></select>
+        </div>
+
+
+        <div class="row">
+          <div class="field">
+            <label for="word-mode">Mode de mots</label>
             <select id="word-mode" aria-label="Mode de mots">
               <option value="football">Football</option>
               <option value="firstname">Prénom</option>
