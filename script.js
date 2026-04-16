@@ -42,7 +42,7 @@ const FOOTBALL_WORDS = [
   'Franz Beckenbauer'
 ];
 
-const FIRSTNAME_WORDS = ['Albert', 'Driss', 'Ariyen', 'imad', 'Almir', 'Benjamin'];
+const FIRSTNAME_WORDS = ['Albert', 'Driss', 'Ariyen', 'Imad', 'Almir', 'Benjamin', 'Erwan', 'Larsson', 'Verpoorten'];
 const ANIME_WORDS = [
   'Naruto',
   'Sasuke',
