@@ -3,126 +3,76 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Undercover</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+    <title>Undercover — Football Edition</title>
+    <title>Undercover — Football, Prénoms & Anime</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="noise"></div>
     <main class="app">
+      <header class="hero">
+        <h1>Undercover</h1>
+        <p class="subtitle">Mode football ou prénoms — rôles personnalisés, vote et élimination.</p>
+        <p class="subtitle">Mode football, prénoms ou anime — rôles personnalisés, vote et élimination.</p>
+      </header>
 
-      <!-- ── SETUP ── -->
-      <section id="setup-screen" class="screen active">
-        <header class="hero">
-          <h1>UNDER<span class="accent">COVER</span></h1>
-          <p class="subtitle">Football · Prénoms · Anime</p>
-        </header>
-
-        <div class="card">
-          <div class="row">
-            <div class="field">
-              <label for="player-count">Joueurs</label>
-              <select id="player-count"></select>
-            </div>
-            <div class="field">
-              <label for="word-mode">Mode</label>
-              <select id="word-mode">
-                <option value="football">⚽ Football</option>
-                <option value="firstname">👤 Prénoms</option>
-                <option value="anime">⛩️ Anime</option>
-              </select>
-            </div>
+      <section id="setup-screen" class="card">
+            <select id="word-mode" aria-label="Mode de mots">
+              <option value="football">Football</option>
+              <option value="firstname">Prénom</option>
+              <option value="anime">Anime</option>
+            </select>
           </div>
-
-          <div class="row">
-            <div class="field">
-              <label for="undercover-count">Undercovers</label>
-              <select id="undercover-count"></select>
-            </div>
-            <div class="field">
-              <label for="mrwhite-count">Mr White</label>
-              <select id="mrwhite-count"></select>
-            </div>
-          </div>
-
-          <div class="names-block">
-            <p class="label-inline">Prénoms des joueurs</p>
-            <div id="names-container" class="names-grid"></div>
-          </div>
-
-          <p id="setup-hint" class="hint"></p>
-          <button id="start-btn" class="btn primary full">Lancer la distribution →</button>
         </div>
+        <div class="row">
+          <div class="field">
+            <label for="undercover-count">Nombre d'Undercovers</label>
+            <select id="undercover-count" aria-label="Nombre d'Undercovers"></select>
+          </div>
+          <div class="field">
+            <label for="mrwhite-count">Nombre de Mr White</label>
+            <select id="mrwhite-count" aria-label="Nombre de Mr White"></select>
+          </div>
+        </div>
+
+        <div class="names-block">
+          <p class="label-inline">Prénoms des joueurs</p>
+          <div id="names-container" class="names-grid"></div>
+        </div>
+
+        <button id="start-btn" class="btn primary">Lancer la distribution</button>
+        <p id="setup-hint" class="hint">Rôles: 1 Undercover, 0 Mr White.</p>
       </section>
 
-      <!-- ── DEAL ── -->
-      <section id="deal-screen" class="screen">
-        <header class="hero">
-          <h1>UNDER<span class="accent">COVER</span></h1>
-        </header>
-        <div class="card">
-          <h2 class="step-title">Distribution des rôles</h2>
-          <p id="deal-instruction" class="deal-instr"></p>
+      <section id="deal-screen" class="card hidden" aria-live="polite">
+        <h2>2) Distribuer les rôles</h2>
+        <p id="deal-instruction">Passe le téléphone au joueur 1, puis appuie pour révéler.</p>
 
-          <div id="reveal-zone" class="reveal-zone">
-            <p class="reveal-placeholder">● ● ●</p>
-          </div>
-
-          <div class="actions">
-            <button id="reveal-btn" class="btn primary">👁 Révéler mon mot</button>
-            <button id="next-btn" class="btn secondary hidden">Suivant →</button>
-          </div>
-
-          <p class="hint">Ne montre ton mot à personne.</p>
+        <div id="reveal-zone" class="reveal-zone">
+          <p class="reveal-placeholder">Mot caché</p>
         </div>
+
+        <div class="actions">
+          <button id="reveal-btn" class="btn primary">Révéler</button>
+          <button id="next-btn" class="btn hidden">Joueur suivant</button>
+        </div>
+
+        <p class="hint">Ne montre ton mot à personne. Quand tu as mémorisé, passe l'écran.</p>
       </section>
 
-      <!-- ── PLAY ── -->
-      <section id="play-screen" class="screen">
-        <header class="hero">
-          <h1>UNDER<span class="accent">COVER</span></h1>
-        </header>
-        <div class="card">
-          <h2 class="step-title">Vote d'élimination</h2>
-          <p class="hint">Chaque joueur donne un indice, puis votez pour éliminer quelqu'un.</p>
+      <section id="play-screen" class="card hidden">
+        <h2>3) Phase de débat + vote</h2>
+        <p>
+          Tous les joueurs donnent un indice. Ensuite, choisissez une personne à éliminer pour voir son rôle.
+        </p>
+        <p class="hint">Les mots restent secrets pendant toute la phase de débat.</p>
 
-          <div id="vote-list" class="vote-list"></div>
-          <div id="elimination-log" class="elimination-log"></div>
+        <h3>Vote d'élimination</h3>
+        <div id="vote-list" class="vote-list"></div>
 
-          <button id="restart-btn" class="btn secondary">↩ Nouvelle partie</button>
-        </div>
+        <div id="elimination-log" class="elimination-log"></div>
+
+        <button id="restart-btn" class="btn secondary">Nouvelle partie</button>
       </section>
-
-      <!-- ── MR WHITE GUESS ── -->
-      <section id="mrwhite-screen" class="screen">
-        <header class="hero">
-          <h1>MR <span class="accent">WHITE</span></h1>
-        </header>
-        <div class="card">
-          <h2 class="step-title">Dernière chance !</h2>
-          <p id="mrwhite-name" class="deal-instr"></p>
-          <p class="hint">Tu viens d'être éliminé(e). Si tu devines le mot des civils, tu gagnes !</p>
-
-          <input id="mrwhite-guess" class="name-input full" type="text" placeholder="Ton mot…" maxlength="40" />
-          <button id="mrwhite-submit" class="btn primary full">Valider ma réponse</button>
-        </div>
-      </section>
-
-      <!-- ── VICTORY ── -->
-      <section id="victory-screen" class="screen">
-        <header class="hero">
-          <h1 id="victory-title">VICTOIRE</h1>
-        </header>
-        <div class="card victory-card">
-          <div id="victory-icon" class="victory-icon">🏆</div>
-          <p id="victory-message" class="victory-msg"></p>
-          <div id="victory-words" class="victory-words"></div>
-          <button id="victory-restart" class="btn primary full">↩ Rejouer</button>
-        </div>
-      </section>
-
     </main>
 
     <script src="script.js"></script>
